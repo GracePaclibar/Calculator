@@ -49,7 +49,7 @@ namespace Calculator
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonC = new System.Windows.Forms.Button();
             this.buttonCE = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button7
@@ -62,6 +62,7 @@ namespace Calculator
             this.button7.TabIndex = 0;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 
@@ -73,6 +74,7 @@ namespace Calculator
             this.button4.TabIndex = 1;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // buttonPlusMin
             // 
@@ -107,6 +109,7 @@ namespace Calculator
             this.button0.TabIndex = 7;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = false;
+            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // button2
             // 
@@ -118,6 +121,7 @@ namespace Calculator
             this.button2.TabIndex = 6;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button5
             // 
@@ -129,6 +133,7 @@ namespace Calculator
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button8
             // 
@@ -140,6 +145,7 @@ namespace Calculator
             this.button8.TabIndex = 4;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // buttonEqual
             // 
@@ -206,6 +212,7 @@ namespace Calculator
             this.button3.TabIndex = 10;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button6
             // 
@@ -217,6 +224,7 @@ namespace Calculator
             this.button6.TabIndex = 9;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button9
             // 
@@ -228,6 +236,7 @@ namespace Calculator
             this.button9.TabIndex = 8;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // buttonDiv
             // 
@@ -260,6 +269,7 @@ namespace Calculator
             this.buttonC.TabIndex = 17;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = false;
+            this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // buttonCE
             // 
@@ -272,17 +282,20 @@ namespace Calculator
             this.buttonCE.Text = "CE";
             this.buttonCE.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // textBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Meiryo", 25.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(13, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(285, 51);
-            this.textBox1.TabIndex = 20;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox.Font = new System.Drawing.Font("Meiryo", 25.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.textBox.Location = new System.Drawing.Point(3, 10);
+            this.textBox.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.textBox.Name = "textBox";
+            this.textBox.ReadOnly = true;
+            this.textBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox.Size = new System.Drawing.Size(303, 51);
+            this.textBox.TabIndex = 20;
+            this.textBox.TabStop = false;
             // 
             // Calculator
             // 
@@ -290,7 +303,7 @@ namespace Calculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(309, 352);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.buttonDiv);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonC);
@@ -340,7 +353,7 @@ namespace Calculator
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonC;
         private System.Windows.Forms.Button buttonCE;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox;
     }
 }
 
