@@ -14,6 +14,8 @@ namespace Calculator
     {
         Double Result = 0;
         String Operation = "";
+        bool checkOperation = false;
+
         public Calculator()
         {
             InitializeComponent();
@@ -26,14 +28,17 @@ namespace Calculator
                 textBox.Clear();
             }
             Button num = (Button)sender;
-            textBox.Text = textBox.Text += num.Text; 
+            textBox.Text = textBox.Text += num.Text;
+            checkOperation = false;
         }
 
         private void operation_click(object sender, EventArgs e)
         {
             Button operation = (Button)sender;
             Operation = operation.Text;
-            Result = Double.Parse(textBox.Text); 
+            Result = Double.Parse(textBox.Text);
+            currentOp.Text = Result + " " + Operation;
+            checkOperation = true;
 
         }
 
@@ -46,6 +51,27 @@ namespace Calculator
         {
             textBox.Text = "0";
             Result = 0;
+        }
+
+        private void buttonEqual_Click(object sender, EventArgs e)
+        {
+            switch(Operation)
+            {
+                case "+":
+                    textBox.Text = (Result + Double.Parse(textBox.Text)).ToString();
+                    break;
+                case "-":
+                    textBox.Text = (Result - Double.Parse(textBox.Text)).ToString();
+                    break;
+                case "÷":
+                    textBox.Text = (Result / Double.Parse(textBox.Text)).ToString();
+                    break;
+                case "×":
+                    textBox.Text = (Result * Double.Parse(textBox.Text)).ToString();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

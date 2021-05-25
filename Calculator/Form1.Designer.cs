@@ -50,6 +50,7 @@ namespace Calculator
             this.buttonC = new System.Windows.Forms.Button();
             this.buttonCE = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.currentOp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button7
@@ -157,6 +158,7 @@ namespace Calculator
             this.buttonEqual.TabIndex = 15;
             this.buttonEqual.Text = "=";
             this.buttonEqual.UseVisualStyleBackColor = false;
+            this.buttonEqual.Click += new System.EventHandler(this.buttonEqual_Click);
             // 
             // buttonPlus
             // 
@@ -294,15 +296,27 @@ namespace Calculator
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox.Font = new System.Drawing.Font("Meiryo", 25.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBox.Location = new System.Drawing.Point(3, 10);
+            this.textBox.Location = new System.Drawing.Point(3, 19);
             this.textBox.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBox.Name = "textBox";
             this.textBox.ReadOnly = true;
-            this.textBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox.Size = new System.Drawing.Size(303, 51);
             this.textBox.TabIndex = 20;
             this.textBox.TabStop = false;
             this.textBox.Text = "0";
+            this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // currentOp
+            // 
+            this.currentOp.AutoSize = true;
+            this.currentOp.Location = new System.Drawing.Point(268, 5);
+            this.currentOp.Name = "currentOp";
+            this.currentOp.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.currentOp.Size = new System.Drawing.Size(38, 15);
+            this.currentOp.TabIndex = 21;
+            this.currentOp.Text = "label1";
+            this.currentOp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Calculator
             // 
@@ -310,6 +324,7 @@ namespace Calculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(309, 352);
+            this.Controls.Add(this.currentOp);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.buttonDiv);
             this.Controls.Add(this.buttonBack);
@@ -361,6 +376,7 @@ namespace Calculator
         private System.Windows.Forms.Button buttonC;
         private System.Windows.Forms.Button buttonCE;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Label currentOp;
     }
 }
 
