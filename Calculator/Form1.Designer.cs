@@ -201,6 +201,7 @@ namespace Calculator
             this.buttonDot.TabIndex = 11;
             this.buttonDot.Text = ".";
             this.buttonDot.UseVisualStyleBackColor = false;
+            this.buttonDot.Click += new System.EventHandler(this.button_click);
             // 
             // button3
             // 
@@ -295,6 +296,7 @@ namespace Calculator
             this.textBox.Size = new System.Drawing.Size(303, 51);
             this.textBox.TabIndex = 20;
             this.textBox.TabStop = false;
+            this.textBox.Text = "0";
             // 
             // Calculator
             // 

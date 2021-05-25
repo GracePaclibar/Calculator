@@ -19,8 +19,12 @@ namespace Calculator
 
         private void button_click(object sender, EventArgs e)
         {
+            if (textBox.Text == "0")
+            {
+                textBox.Clear();
+            }
             Button num = (Button)sender;
-            textBox.Text = textBox.Text + num.Text; 
+            textBox.Text = textBox.Text += num.Text; 
         }
     }
 }
