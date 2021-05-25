@@ -28,8 +28,20 @@ namespace Calculator
                 textBox.Clear();
             }
             Button num = (Button)sender;
-            textBox.Text = textBox.Text += num.Text;
-            checkOperation = false;
+            if (num.Text == ".")
+            {
+                if (!textBox.Text.Contains("."))
+                {
+                    textBox.Text = textBox.Text += num.Text;
+                    checkOperation = false;
+                }
+            }
+            else
+            {
+                textBox.Text = textBox.Text += num.Text;
+                checkOperation = false;
+            }
+            
         }
 
         private void operation_click(object sender, EventArgs e)

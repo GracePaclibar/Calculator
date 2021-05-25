@@ -310,7 +310,9 @@ namespace Calculator
             // currentOp
             // 
             this.currentOp.AutoSize = true;
-            this.currentOp.Location = new System.Drawing.Point(268, 5);
+            this.currentOp.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.currentOp.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.currentOp.Location = new System.Drawing.Point(277, 5);
             this.currentOp.Name = "currentOp";
             this.currentOp.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.currentOp.Size = new System.Drawing.Size(0, 15);
