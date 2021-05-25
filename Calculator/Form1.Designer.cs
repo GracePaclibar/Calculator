@@ -180,7 +180,7 @@ namespace Calculator
             this.buttonMin.Name = "buttonMin";
             this.buttonMin.Size = new System.Drawing.Size(75, 55);
             this.buttonMin.TabIndex = 13;
-            this.buttonMin.Text = "\t−";
+            this.buttonMin.Text = "−";
             this.buttonMin.UseVisualStyleBackColor = false;
             this.buttonMin.Click += new System.EventHandler(this.operation_click);
             // 
@@ -309,13 +309,12 @@ namespace Calculator
             // 
             // currentOp
             // 
-            this.currentOp.AutoSize = true;
             this.currentOp.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.currentOp.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.currentOp.Location = new System.Drawing.Point(277, 5);
+            this.currentOp.Location = new System.Drawing.Point(155, 4);
             this.currentOp.Name = "currentOp";
             this.currentOp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.currentOp.Size = new System.Drawing.Size(0, 15);
+            this.currentOp.Size = new System.Drawing.Size(146, 20);
             this.currentOp.TabIndex = 21;
             this.currentOp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

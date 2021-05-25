@@ -66,13 +66,15 @@ namespace Calculator
         private void buttonCE_Click(object sender, EventArgs e)
         {
             textBox.Text = "0";
-            currentOp.Text = "";
+            Result = 0;
+
         }
 
         private void buttonC_Click(object sender, EventArgs e)
         {
             textBox.Text = "0";
             Result = 0;
+            currentOp.Text = "";
         }
 
         private void buttonEqual_Click(object sender, EventArgs e)
@@ -82,7 +84,7 @@ namespace Calculator
                 case "+":
                     textBox.Text = (Result + Double.Parse(textBox.Text)).ToString();
                     break;
-                case "-":
+                case "−":
                     textBox.Text = (Result - Double.Parse(textBox.Text)).ToString();
                     break;
                 case "÷":
@@ -94,6 +96,8 @@ namespace Calculator
                 default:
                     break;
             }
+            Result = Double.Parse(textBox.Text);
+            currentOp.Text = "";
         }
     }
 }
