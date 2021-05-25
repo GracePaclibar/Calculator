@@ -99,5 +99,10 @@ namespace Calculator
             Result = Double.Parse(textBox.Text);
             currentOp.Text = "";
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1);
+        }
     }
 }
