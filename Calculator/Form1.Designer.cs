@@ -313,9 +313,8 @@ namespace Calculator
             this.currentOp.Location = new System.Drawing.Point(268, 5);
             this.currentOp.Name = "currentOp";
             this.currentOp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.currentOp.Size = new System.Drawing.Size(38, 15);
+            this.currentOp.Size = new System.Drawing.Size(0, 15);
             this.currentOp.TabIndex = 21;
-            this.currentOp.Text = "label1";
             this.currentOp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Calculator

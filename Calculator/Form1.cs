@@ -23,7 +23,7 @@ namespace Calculator
 
         private void button_click(object sender, EventArgs e)
         {
-            if (textBox.Text == "0")
+            if ((textBox.Text == "0") || (checkOperation))
             {
                 textBox.Clear();
             }
@@ -45,6 +45,7 @@ namespace Calculator
         private void buttonCE_Click(object sender, EventArgs e)
         {
             textBox.Text = "0";
+            currentOp.Text = "";
         }
 
         private void buttonC_Click(object sender, EventArgs e)
