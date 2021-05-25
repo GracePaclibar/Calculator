@@ -47,11 +47,20 @@ namespace Calculator
         private void operation_click(object sender, EventArgs e)
         {
             Button operation = (Button)sender;
-            Operation = operation.Text;
-            Result = Double.Parse(textBox.Text);
-            currentOp.Text = Result + " " + Operation;
-            checkOperation = true;
-
+            if (Result != 0)
+            {
+                buttonEqual.PerformClick();
+                Operation = operation.Text;
+                currentOp.Text = Result + " " + Operation;
+                checkOperation = true;
+            }
+            else
+            {
+                Operation = operation.Text;
+                Result = Double.Parse(textBox.Text);
+                currentOp.Text = Result + " " + Operation;
+                checkOperation = true;
+            }
         }
 
         private void buttonCE_Click(object sender, EventArgs e)
