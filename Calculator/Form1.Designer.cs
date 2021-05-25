@@ -168,6 +168,7 @@ namespace Calculator
             this.buttonPlus.TabIndex = 14;
             this.buttonPlus.Text = "+";
             this.buttonPlus.UseVisualStyleBackColor = false;
+            this.buttonPlus.Click += new System.EventHandler(this.operation_click);
             // 
             // buttonMin
             // 
@@ -179,6 +180,7 @@ namespace Calculator
             this.buttonMin.TabIndex = 13;
             this.buttonMin.Text = "\t−";
             this.buttonMin.UseVisualStyleBackColor = false;
+            this.buttonMin.Click += new System.EventHandler(this.operation_click);
             // 
             // buttonMul
             // 
@@ -190,6 +192,7 @@ namespace Calculator
             this.buttonMul.TabIndex = 12;
             this.buttonMul.Text = "×";
             this.buttonMul.UseVisualStyleBackColor = false;
+            this.buttonMul.Click += new System.EventHandler(this.operation_click);
             // 
             // buttonDot
             // 
@@ -249,6 +252,7 @@ namespace Calculator
             this.buttonDiv.TabIndex = 19;
             this.buttonDiv.Text = "÷";
             this.buttonDiv.UseVisualStyleBackColor = false;
+            this.buttonDiv.Click += new System.EventHandler(this.operation_click);
             // 
             // buttonBack
             // 
@@ -270,6 +274,7 @@ namespace Calculator
             this.buttonC.TabIndex = 17;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = false;
+            this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // buttonCE
             // 
@@ -281,6 +286,7 @@ namespace Calculator
             this.buttonCE.TabIndex = 16;
             this.buttonCE.Text = "CE";
             this.buttonCE.UseVisualStyleBackColor = false;
+            this.buttonCE.Click += new System.EventHandler(this.buttonCE_Click);
             // 
             // textBox
             // 

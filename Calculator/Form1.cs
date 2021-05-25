@@ -12,6 +12,8 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
+        Double Result = 0;
+        String Operation = "";
         public Calculator()
         {
             InitializeComponent();
@@ -25,6 +27,25 @@ namespace Calculator
             }
             Button num = (Button)sender;
             textBox.Text = textBox.Text += num.Text; 
+        }
+
+        private void operation_click(object sender, EventArgs e)
+        {
+            Button operation = (Button)sender;
+            Operation = operation.Text;
+            Result = Double.Parse(textBox.Text); 
+
+        }
+
+        private void buttonCE_Click(object sender, EventArgs e)
+        {
+            textBox.Text = "0";
+        }
+
+        private void buttonC_Click(object sender, EventArgs e)
+        {
+            textBox.Text = "0";
+            Result = 0;
         }
     }
 }
