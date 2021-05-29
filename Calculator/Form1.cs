@@ -102,7 +102,19 @@ namespace Calculator
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1);
+            try
+            {
+                textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1);
+                if(textBox.Text == "")
+                {
+                    textBox.Text = "0";
+                }
+
+            }
+            catch
+            {
+
+            }
         }
 
         private void negate_click(object sender, EventArgs e)
