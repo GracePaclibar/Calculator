@@ -31,7 +31,7 @@ namespace Calculator
         {
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.buttonPlusMin = new System.Windows.Forms.Button();
+            this.buttonNegate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -77,16 +77,17 @@ namespace Calculator
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button_click);
             // 
-            // buttonPlusMin
+            // buttonNegate
             // 
-            this.buttonPlusMin.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonPlusMin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonPlusMin.Location = new System.Drawing.Point(3, 293);
-            this.buttonPlusMin.Name = "buttonPlusMin";
-            this.buttonPlusMin.Size = new System.Drawing.Size(75, 55);
-            this.buttonPlusMin.TabIndex = 3;
-            this.buttonPlusMin.Text = "+/-";
-            this.buttonPlusMin.UseVisualStyleBackColor = false;
+            this.buttonNegate.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonNegate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonNegate.Location = new System.Drawing.Point(3, 293);
+            this.buttonNegate.Name = "buttonNegate";
+            this.buttonNegate.Size = new System.Drawing.Size(75, 55);
+            this.buttonNegate.TabIndex = 3;
+            this.buttonNegate.Text = "+/-";
+            this.buttonNegate.UseVisualStyleBackColor = false;
+            this.buttonNegate.Click += new System.EventHandler(this.negate_click);
             // 
             // button1
             // 
@@ -343,7 +344,7 @@ namespace Calculator
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.buttonPlusMin);
+            this.Controls.Add(this.buttonNegate);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button7);
@@ -358,7 +359,7 @@ namespace Calculator
 
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button buttonPlusMin;
+        private System.Windows.Forms.Button buttonNegate;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button button2;

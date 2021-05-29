@@ -104,5 +104,10 @@ namespace Calculator
         {
             textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1);
         }
+
+        private void negate_click(object sender, EventArgs e)
+        {
+            textBox.Text = (Double.Parse(textBox.Text) * -1).ToString();
+        }
     }
 }
