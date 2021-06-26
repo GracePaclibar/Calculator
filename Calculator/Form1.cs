@@ -73,26 +73,5 @@ namespace Calculator
             calc.Negation();
             textBox.Text = calc.num2;
         }
-
-        private void Number()
-        {
-            if ((textBox.Text == "0") || (calc.checkOperation))
-            {
-                textBox.Clear();
-            }
-            if (calc.Num == ".")
-            {
-                if (!textBox.Text.Contains("."))
-                {
-                    textBox.Text = textBox.Text += calc.Num;
-                    calc.checkOperation = false;
-                }
-            }
-            else
-            {
-                textBox.Text = textBox.Text += calc.Num;
-                calc.checkOperation = false;
-            }
-        }
     }
 }
