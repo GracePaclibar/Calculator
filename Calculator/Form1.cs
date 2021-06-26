@@ -102,10 +102,20 @@ namespace Calculator
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
+            BackSpace();
+        }
+
+        private void negate_click(object sender, EventArgs e)
+        {
+            Negation();
+        }
+
+        private void BackSpace()
+        {
             try
             {
                 textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1);
-                if(textBox.Text == "")
+                if (textBox.Text == "")
                 {
                     textBox.Text = "0";
                 }
@@ -117,10 +127,9 @@ namespace Calculator
             }
         }
 
-        private void negate_click(object sender, EventArgs e)
+        private void Negation()
         {
             textBox.Text = (Double.Parse(textBox.Text) * -1).ToString();
         }
-
     }
 }
