@@ -8,6 +8,8 @@ namespace Calculator
 {
     class myClass
     {
+        public String Operation = "";
+        public String operation_symbol = "";
         public Double Result = 0;
         public String num2 = "";
         public String CurrentOperation = "";
@@ -22,6 +24,29 @@ namespace Calculator
         {
             num2 = "0";
             Result = 0;
+            CurrentOperation = "";
+        }
+
+        public void Equal()
+        {
+            switch (Operation)
+            {
+                case "+":
+                    num2 = (Result + Double.Parse(num2)).ToString();
+                    break;
+                case "−":
+                    num2 = (Result - Double.Parse(num2)).ToString();
+                    break;
+                case "÷":
+                    num2 = (Result / Double.Parse(num2)).ToString();
+                    break;
+                case "×":
+                    num2 = (Result * Double.Parse(num2)).ToString();
+                    break;
+                default:
+                    break;
+            }
+            Result = Double.Parse(num2);
             CurrentOperation = "";
         }
 
