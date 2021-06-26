@@ -12,6 +12,12 @@ namespace Calculator
         public String num2 = "";
         public String CurrentOperation = "";
 
+        public void CE()
+        {
+            num2 = "0";
+            Result = 0;
+        }
+
         public void C()
         {
             num2 = "0";

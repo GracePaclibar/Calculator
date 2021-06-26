@@ -42,7 +42,8 @@ namespace Calculator
 
         private void buttonCE_Click(object sender, EventArgs e)
         {
-            CE();
+            calc.CE();
+            textBox.Text = calc.num2;
         }
 
         private void buttonC_Click(object sender, EventArgs e)
@@ -114,13 +115,6 @@ namespace Calculator
         {
             textBox.Text = "0";
             calc.Result = 0;
-        }
-
-        private void C()
-        {
-            textBox.Text = "0";
-            calc.Result = 0;
-            currentOp.Text = "";
         }
 
         private void Equal()
