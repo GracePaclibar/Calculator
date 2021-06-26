@@ -377,8 +377,8 @@ namespace Calculator
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonC;
         private System.Windows.Forms.Button buttonCE;
-        private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Label currentOp;
+        public System.Windows.Forms.TextBox textBox;
     }
 }
 

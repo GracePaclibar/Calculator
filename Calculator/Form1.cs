@@ -12,11 +12,15 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
-        Double Result = 0;
-        String Operation = "";
-        String operation_symbol = "";
-        String Num = "";
-        bool checkOperation = false;
+
+        myClass calc = new myClass();
+
+        public Double Result = 0;
+        public String Operation = "";
+        public String operation_symbol = "";
+        public String Num = "";
+        public static String TextBox = "";
+        public bool checkOperation = false;
 
         public Calculator()
         {
@@ -59,7 +63,9 @@ namespace Calculator
 
         private void negate_click(object sender, EventArgs e)
         {
-            Negation();
+            calc.num2 = textBox.Text;
+            calc.Negation();
+            textBox.Text = calc.num2;
         }
 
         private void Number()
@@ -152,11 +158,6 @@ namespace Calculator
             {
 
             }
-        }
-
-        private void Negation()
-        {
-            textBox.Text = (Double.Parse(textBox.Text) * -1).ToString();
         }
     }
 }
