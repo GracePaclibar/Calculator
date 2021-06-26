@@ -72,14 +72,34 @@ namespace Calculator
 
         private void buttonC_Click(object sender, EventArgs e)
         {
+            C();
+        }
+
+        private void buttonEqual_Click(object sender, EventArgs e)
+        {
+            Equal();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            BackSpace();
+        }
+
+        private void negate_click(object sender, EventArgs e)
+        {
+            Negation();
+        }
+
+        private void C()
+        {
             textBox.Text = "0";
             Result = 0;
             currentOp.Text = "";
         }
 
-        private void buttonEqual_Click(object sender, EventArgs e)
+        private void Equal()
         {
-            switch(Operation)
+            switch (Operation)
             {
                 case "+":
                     textBox.Text = (Result + Double.Parse(textBox.Text)).ToString();
@@ -98,16 +118,6 @@ namespace Calculator
             }
             Result = Double.Parse(textBox.Text);
             currentOp.Text = "";
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            BackSpace();
-        }
-
-        private void negate_click(object sender, EventArgs e)
-        {
-            Negation();
         }
 
         private void BackSpace()
