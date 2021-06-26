@@ -14,6 +14,8 @@ namespace Calculator
     {
         Double Result = 0;
         String Operation = "";
+        String operation_symbol = "";
+        String Num = "";
         bool checkOperation = false;
 
         public Calculator()
@@ -23,51 +25,21 @@ namespace Calculator
 
         private void button_click(object sender, EventArgs e)
         {
-            if ((textBox.Text == "0") || (checkOperation))
-            {
-                textBox.Clear();
-            }
             Button num = (Button)sender;
-            if (num.Text == ".")
-            {
-                if (!textBox.Text.Contains("."))
-                {
-                    textBox.Text = textBox.Text += num.Text;
-                    checkOperation = false;
-                }
-            }
-            else
-            {
-                textBox.Text = textBox.Text += num.Text;
-                checkOperation = false;
-            }
-            
+            Num = num.Text;
+            Number();
         }
 
         private void operation_click(object sender, EventArgs e)
         {
             Button operation = (Button)sender;
-            if (Result != 0)
-            {
-                buttonEqual.PerformClick();
-                Operation = operation.Text;
-                currentOp.Text = Result + " " + Operation;
-                checkOperation = true;
-            }
-            else
-            {
-                Operation = operation.Text;
-                Result = Double.Parse(textBox.Text);
-                currentOp.Text = Result + " " + Operation;
-                checkOperation = true;
-            }
+            operation_symbol = operation.Text;
+            OperationButton();
         }
 
         private void buttonCE_Click(object sender, EventArgs e)
         {
-            textBox.Text = "0";
-            Result = 0;
-
+            CE();
         }
 
         private void buttonC_Click(object sender, EventArgs e)
@@ -88,6 +60,51 @@ namespace Calculator
         private void negate_click(object sender, EventArgs e)
         {
             Negation();
+        }
+
+        private void Number()
+        {
+            if ((textBox.Text == "0") || (checkOperation))
+            {
+                textBox.Clear();
+            }
+            if (Num == ".")
+            {
+                if (!textBox.Text.Contains("."))
+                {
+                    textBox.Text = textBox.Text += Num;
+                    checkOperation = false;
+                }
+            }
+            else
+            {
+                textBox.Text = textBox.Text += Num;
+                checkOperation = false;
+            }
+        }
+
+        private void OperationButton()
+        {
+            if (Result != 0)
+            {
+                buttonEqual.PerformClick();
+                Operation = operation_symbol;
+                currentOp.Text = Result + " " + Operation;
+                checkOperation = true;
+            }
+            else
+            {
+                Operation = operation_symbol;
+                Result = Double.Parse(textBox.Text);
+                currentOp.Text = Result + " " + Operation;
+                checkOperation = true;
+            }
+        }
+
+        private void CE()
+        {
+            textBox.Text = "0";
+            Result = 0;
         }
 
         private void C()
