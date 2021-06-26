@@ -13,7 +13,30 @@ namespace Calculator
         public Double Result = 0;
         public String num2 = "";
         public String CurrentOperation = "";
+        public String Num = "";
         public bool checkOperation = false;
+
+        public void Number()
+        {
+            if ((num2 == "0") || (checkOperation))
+            {
+                num2 = "";
+            }
+
+            if (Num == ".")
+            {
+                if (!num2.Contains("."))
+                {
+                    num2 = num2 += Num;
+                    checkOperation = false;
+                }
+            }
+            else
+            {
+                num2 = num2 += Num;
+                checkOperation = false;
+            }
+        }
 
         public void OperationButton()
         {

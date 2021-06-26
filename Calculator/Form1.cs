@@ -15,8 +15,6 @@ namespace Calculator
 
         myClass calc = new myClass();
 
-        public String Num = "";
-        public static String TextBox = "";
 
         public Calculator()
         {
@@ -26,8 +24,10 @@ namespace Calculator
         private void button_click(object sender, EventArgs e)
         {
             Button num = (Button)sender;
-            Num = num.Text;
-            Number();
+            calc.Num = num.Text;
+            calc.num2 = textBox.Text;
+            calc.Number();
+            textBox.Text = calc.num2;
         }
 
         private void operation_click(object sender, EventArgs e)
@@ -80,17 +80,17 @@ namespace Calculator
             {
                 textBox.Clear();
             }
-            if (Num == ".")
+            if (calc.Num == ".")
             {
                 if (!textBox.Text.Contains("."))
                 {
-                    textBox.Text = textBox.Text += Num;
+                    textBox.Text = textBox.Text += calc.Num;
                     calc.checkOperation = false;
                 }
             }
             else
             {
-                textBox.Text = textBox.Text += Num;
+                textBox.Text = textBox.Text += calc.Num;
                 calc.checkOperation = false;
             }
         }
