@@ -8,7 +8,16 @@ namespace Calculator
 {
     class myClass
     {
+        public Double Result = 0;
         public String num2 = "";
+        public String CurrentOperation = "";
+
+        public void C()
+        {
+            num2 = "0";
+            Result = 0;
+            CurrentOperation = "";
+        }
 
         public void BackSpace()
         {

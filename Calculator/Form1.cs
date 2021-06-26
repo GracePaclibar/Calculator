@@ -15,7 +15,6 @@ namespace Calculator
 
         myClass calc = new myClass();
 
-        public Double Result = 0;
         public String Operation = "";
         public String operation_symbol = "";
         public String Num = "";
@@ -48,7 +47,9 @@ namespace Calculator
 
         private void buttonC_Click(object sender, EventArgs e)
         {
-            C();
+            calc.C();
+            textBox.Text = calc.num2;
+            currentOp.Text = calc.CurrentOperation;
         }
 
         private void buttonEqual_Click(object sender, EventArgs e)
@@ -93,18 +94,18 @@ namespace Calculator
 
         private void OperationButton()
         {
-            if (Result != 0)
+            if (calc.Result != 0)
             {
                 buttonEqual.PerformClick();
                 Operation = operation_symbol;
-                currentOp.Text = Result + " " + Operation;
+                currentOp.Text = calc.Result + " " + Operation;
                 checkOperation = true;
             }
             else
             {
                 Operation = operation_symbol;
-                Result = Double.Parse(textBox.Text);
-                currentOp.Text = Result + " " + Operation;
+                calc.Result = Double.Parse(textBox.Text);
+                currentOp.Text = calc.Result + " " + Operation;
                 checkOperation = true;
             }
         }
@@ -112,13 +113,13 @@ namespace Calculator
         private void CE()
         {
             textBox.Text = "0";
-            Result = 0;
+            calc.Result = 0;
         }
 
         private void C()
         {
             textBox.Text = "0";
-            Result = 0;
+            calc.Result = 0;
             currentOp.Text = "";
         }
 
@@ -127,21 +128,21 @@ namespace Calculator
             switch (Operation)
             {
                 case "+":
-                    textBox.Text = (Result + Double.Parse(textBox.Text)).ToString();
+                    textBox.Text = (calc.Result + Double.Parse(textBox.Text)).ToString();
                     break;
                 case "−":
-                    textBox.Text = (Result - Double.Parse(textBox.Text)).ToString();
+                    textBox.Text = (calc.Result - Double.Parse(textBox.Text)).ToString();
                     break;
                 case "÷":
-                    textBox.Text = (Result / Double.Parse(textBox.Text)).ToString();
+                    textBox.Text = (calc.Result / Double.Parse(textBox.Text)).ToString();
                     break;
                 case "×":
-                    textBox.Text = (Result * Double.Parse(textBox.Text)).ToString();
+                    textBox.Text = (calc.Result * Double.Parse(textBox.Text)).ToString();
                     break;
                 default:
                     break;
             }
-            Result = Double.Parse(textBox.Text);
+            calc.Result = Double.Parse(textBox.Text);
             currentOp.Text = "";
         }
     }
