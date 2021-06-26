@@ -121,5 +121,6 @@ namespace Calculator
         {
             textBox.Text = (Double.Parse(textBox.Text) * -1).ToString();
         }
+
     }
 }
