@@ -13,6 +13,25 @@ namespace Calculator
         public Double Result = 0;
         public String num2 = "";
         public String CurrentOperation = "";
+        public bool checkOperation = false;
+
+        public void OperationButton()
+        {
+            if (Result != 0)
+            {
+                Equal();
+                Operation = operation_symbol;
+                CurrentOperation = Result + " " + Operation;
+                checkOperation = true;
+            }
+            else
+            {
+                Operation = operation_symbol;
+                Result = Double.Parse(num2);
+                CurrentOperation = Result + " " + Operation;
+                checkOperation = true;
+            }
+        }
 
         public void CE()
         {

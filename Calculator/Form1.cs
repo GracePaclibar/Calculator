@@ -17,7 +17,6 @@ namespace Calculator
 
         public String Num = "";
         public static String TextBox = "";
-        public bool checkOperation = false;
 
         public Calculator()
         {
@@ -35,7 +34,9 @@ namespace Calculator
         {
             Button operation = (Button)sender;
             calc.operation_symbol = operation.Text;
-            OperationButton();
+            calc.num2 = textBox.Text;
+            calc.OperationButton();
+            currentOp.Text = calc.CurrentOperation;
         }
 
         private void buttonCE_Click(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace Calculator
 
         private void Number()
         {
-            if ((textBox.Text == "0") || (checkOperation))
+            if ((textBox.Text == "0") || (calc.checkOperation))
             {
                 textBox.Clear();
             }
@@ -84,31 +85,13 @@ namespace Calculator
                 if (!textBox.Text.Contains("."))
                 {
                     textBox.Text = textBox.Text += Num;
-                    checkOperation = false;
+                    calc.checkOperation = false;
                 }
             }
             else
             {
                 textBox.Text = textBox.Text += Num;
-                checkOperation = false;
-            }
-        }
-
-        private void OperationButton()
-        {
-            if (calc.Result != 0)
-            {
-                buttonEqual.PerformClick();
-                calc.Operation = calc.operation_symbol;
-                currentOp.Text = calc.Result + " " + calc.Operation;
-                checkOperation = true;
-            }
-            else
-            {
-                calc.Operation = calc.operation_symbol;
-                calc.Result = Double.Parse(textBox.Text);
-                currentOp.Text = calc.Result + " " + calc.Operation;
-                checkOperation = true;
+                calc.checkOperation = false;
             }
         }
     }
