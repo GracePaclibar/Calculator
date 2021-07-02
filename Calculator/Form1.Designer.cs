@@ -348,6 +348,7 @@ namespace Calculator
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button7);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.ResumeLayout(false);
